@@ -1,0 +1,86 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Attendance Management System</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css') }}">
+</head>
+
+
+<body class="body_css text-light">
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light w-110">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Attendance Management System</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse row justify-content-center align-items-centers" id="navbarNavAltMarkup">
+      <div class="navbar-nav row justify-content-center align-items-center ">
+
+        <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<div class="col justify-content-center align-items-center">
+  <h2 class="text-white text-center">Faculty</h2>
+  <div class="row justify-content-center align-items-center  ">
+
+          <img src="{{ url_for('video') }}" width="50%"/>
+
+  </div>
+
+<!--  form start-->
+  <form class="card-body cardbody-color p-lg-5" action="{{ url_for('start_fun') }}" method="post">
+
+
+            <div class=" text-center px-md-5">
+               <label for="sub" class="text-dark">Choose a Subject:</label>
+
+                 <select  id="sub" name="sub">
+
+                     <option value="ml">ML</option>
+                  <option value="toc">TOC</option>
+                  <option value="java">JAVA</option>
+                   <option value="se">SE</option>
+                  <option value="de">DE</option>
+
+                </select>
+            </div>
+
+            <div class="text-center m-2 p-2">
+            <input type="submit" class="btn btn-primary m-auto" value="Start Attendance">
+            </div>
+
+          </form>
+
+
+
+
+<!--  form ends-->
+
+
+  <div class="text-center m-2 p-2">
+    <a href="{{url_for('end_fun')}}" class="btn btn-primary m-auto">Stop Attendance</a>
+  </div>
+
+
+</div>
+
+
+
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
